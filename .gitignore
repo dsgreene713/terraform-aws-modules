@@ -1,3 +1,6 @@
+# ide settings
+**/.idea/*
+
 # Local .terraform directories
 **/.terraform/*
 
