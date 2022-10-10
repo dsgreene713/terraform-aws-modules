@@ -7,8 +7,4 @@ locals {
   private_end_index    = length(local.private_cidr_range) - 1
   public_subnet_cidrs  = flatten(chunklist(cidrsubnets(local.private_cidr_range[local.private_end_index], 4, 4, 4), 3))
   private_subnet_cidrs = slice(local.private_cidr_range, 0, local.private_end_index)
-
-  vpc_tags = {
-    Example = local.vpc_name
-  }
 }

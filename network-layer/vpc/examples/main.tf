@@ -7,8 +7,6 @@ terraform {
       version = "~> 4.32.0"
     }
   }
-
-  # experiments = [module_variable_optional_attrs]
 }
 
 provider "aws" {
@@ -18,6 +16,6 @@ provider "aws" {
 module "opinionated_vpc" {
   source = "../"
 
-  vpc_name = "dang-test-vpc"
+  vpc_name   = "dang-test-vpc"
   cidr_block = "10.0.0.0/16"
 }

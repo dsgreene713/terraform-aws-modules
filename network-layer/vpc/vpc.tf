@@ -16,7 +16,7 @@ module "vpc" {
 
   private_subnets = slice(local.private_subnet_cidrs, 0, 3)
   intra_subnets   = slice(local.private_subnet_cidrs, 3, 6) # todo: this assumes a 6 element list
-  public_subnets  = slice(local.public_subnet_cidrs, 0, 3) # todo: this assumes a 3 element list
+  public_subnets  = slice(local.public_subnet_cidrs, 0, 3)  # todo: this assumes a 3 element list
 
   # todo: add specific nacls
   manage_default_network_acl = var.manage_default_network_acl
@@ -48,6 +48,4 @@ module "vpc" {
   create_flow_log_cloudwatch_log_group = var.create_flow_log_cloudwatch_log_group
   create_flow_log_cloudwatch_iam_role  = var.create_flow_log_cloudwatch_iam_role
   flow_log_max_aggregation_interval    = var.flow_log_max_aggregation_interval
-
-  tags = local.vpc_tags
 }
